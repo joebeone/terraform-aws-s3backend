@@ -29,7 +29,7 @@ resource "aws_resourcegroups_group" "resourcegroups_group" {
   }
 }
 
-resource "aws_kms" "kms_name" {
+resource "aws_kms_key" "kms_key" {
   tags = {
     ResourceGroup = local.namespace
   }
