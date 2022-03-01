@@ -21,7 +21,7 @@ resource "aws_resourcegroups_group" "resourcegroups_group" {
         "TagFilters": [
             {
                 "key": "ResourceGroup", 
-                "Values": ["${local.namespace}]
+                "Values": ["${local.namespace}"]
             }
         ]
       }
