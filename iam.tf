@@ -1,7 +1,7 @@
 data "aws_caller_identity" "current" {}
 
 locals {
-    principal_arns = var.principal_arns != null ? var.principal_arns : [data.aws_caller_identity.current_arn] #if no arns specified use the current account arn
+    principal_arns = var.principal_arns != null ? var.principal_arns : [data.aws_caller_identity.current.arn] #if no arns specified use the current account arn
 }
 
 resource "aws_iam_role" "iam_role" {
@@ -21,7 +21,7 @@ resource "aws_iam_role" "iam_role" {
          ]
      }
     EOF
-    
+
     tags = {
         ResourceGroup = local.namespace
     }
